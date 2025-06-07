@@ -1,0 +1,7 @@
+<div *ngFor="let m of messages" class="message" [class.user]="m.role==='user'" [class.bot]="m.role==='bot'">
+  {{ m.text }}
+</div>
+<form class="input-form" (ngSubmit)="send()">
+  <input name="message" [(ngModel)]="userInput" placeholder="Type a message" autofocus />
+  <button type="submit" [disabled]="loading">Send</button>
+</form>
